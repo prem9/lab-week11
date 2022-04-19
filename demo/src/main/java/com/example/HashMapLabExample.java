@@ -1,6 +1,9 @@
 package com.example;
 
 import com.github.javafaker.Faker;
+
+import org.yaml.snakeyaml.events.Event.ID;
+
 import java.util.*;
 
 /*
@@ -125,12 +128,20 @@ public class HashMapLabExample {
   public static void printJediQuote(Integer id) {
     // students should write code to
     // print a jedi given an id
-    System.out.print("Does nothing now...");
+    System.out.println("---------------------------------------------------------------");
+    System.out.println("Jedi Id   :" + id);
+    System.out.println("Quote     :" + quote.get(id));
+    
+    
   }
 
   public static void printAllJedi() {
-    // students should write code to
-    // print all the jedi names and ids. the jedi can be printed in any order (unordered).
-    System.out.print("Does nothing now...");
+    for(String key: jedi.keySet())
+    {
+      System.out.println("---------------------------------------------------------------");
+      System.out.println("jedi Id   :" + jedi.get(key));
+      System.out.println("jedi name :" + key);
+      System.out.println("quote     :" + quote.get(jedi.get(key)));
+    }
   }
 }
